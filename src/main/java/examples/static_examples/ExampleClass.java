@@ -11,18 +11,22 @@ public class ExampleClass extends ExampleAbstractClass implements ExampleInterfa
         setValue((byte) value);
     }
 
+    @Override
     public void someMethod(String str, int value) {
         // some logic
     }
 
+    @Override
     public int someMethod(String str) {
         return Integer.parseInt(str);
     }
 
+    @Override
     public int someMethod() {
         return getValue();
     }
 
+    @Override
     public String someMethod(ExampleClass exampleClass) {
         return exampleClass.getDateNow();
     }
