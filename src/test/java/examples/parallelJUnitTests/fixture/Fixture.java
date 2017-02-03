@@ -3,6 +3,7 @@ package examples.parallelJUnitTests.fixture;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-@RunWith(Parallelized.class)
+@RunWith(Parameterized.class)
 public class Fixture {
 
     protected static List<WebDriver> driversFromFixture;
