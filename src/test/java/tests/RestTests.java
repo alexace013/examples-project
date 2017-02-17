@@ -23,8 +23,8 @@ public class RestTests {
     }
 
     @Test
-    public void getRequestFindRegion() {
-        String url = "https://restcountries.eu/rest/v1/name/usa";
+    public void getRequestFindRegion() throws JSONException {
+        String url = "http://restcountries.eu/rest/v1/name/usa";
         String parameter = "region";
         String expectedResult = "Americas";
         String actualResult = rest.getRequest(url, parameter);

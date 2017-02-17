@@ -1,4 +1,4 @@
-package examples.threadTest;
+package examples.threads_examles.threadTest;
 
 public class InterferenceThread extends Thread {
     private final InterferenceExample checker;
