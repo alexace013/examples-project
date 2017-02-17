@@ -23,7 +23,7 @@ public class TestSomeGeneric {
     @Before
     public void createGeneric() {
         new SomeGeneric<Float>(14.78F);
-        new SomeGeneric<Integer>(Integer.parseInt(new String("1000")));
+        new SomeGeneric<Integer>(Integer.parseInt("1000"));
     }
 
     @Test
