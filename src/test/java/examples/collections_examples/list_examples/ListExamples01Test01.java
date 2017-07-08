@@ -1,32 +1,25 @@
 package examples.collections_examples.list_examples;
 
-import org.apache.log4j.Logger;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.FixMethodOrder;
+import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class ListExamples02Test {
-
-    private static final Logger LOG = Logger.getLogger(ListExamples01Test.class);
+public class ListExamples01Test01 {
 
     private static List<Integer> list = new ArrayList<>();
 
-    @BeforeClass
-    public static void setUp() {
+    @Before
+    public void setUp() {
         for (int i = 0; i < 100; i++) {
             ListExamples01.addValueIntoList(list, generateRandomValue());
         }
-    }
-
-    @After
-    public void tearDown() {
-        list = null;
     }
 
     @Test
@@ -40,11 +33,8 @@ public class ListExamples02Test {
 
     @Test
     public void test02() {
-        try {
-            assertFalse(ListExamples01.sumAllValuesFromList(list) == 0);
-        } catch (NullPointerException e) {
-            LOG.warn(e);
-        }
+        assertFalse(ListExamples01.sumAllValuesFromList(list) == 0);
+
     }
 
     @Test
@@ -52,18 +42,14 @@ public class ListExamples02Test {
         try {
             assertTrue(!ListExamples01.isListEmpty(list));
         } catch (Exception e) {
-            LOG.error(e);
+            e.printStackTrace();
         }
     }
 
     @Test
-    public void test04() {
-        try {
-            ListExamples01.clearList(list);
-            assertTrue(ListExamples01.isListEmpty(list));
-        } catch (Exception e) {
-            LOG.error(e);
-        }
+    public void test04() throws Exception {
+        ListExamples01.clearList(list);
+        assertTrue(ListExamples01.isListEmpty(list));
     }
 
     private static int generateRandomValue() {
