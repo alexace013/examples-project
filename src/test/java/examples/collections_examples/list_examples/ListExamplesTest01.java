@@ -9,14 +9,17 @@ import static java.lang.System.out;
 
 public class ListExamplesTest01 {
 
+    ///simple example. Need rewrite with JUnit annotations and tests
     public static void main(String[] args) {
 
 //        deleteFile("E:\\workspace\\Java\\projects\\examples-project\\test.txt");
 
         short listSize = 1000;
         List<String> list = new ArrayList<>();
+        ListExamplesTest01 listExamples01;
         for (short index = 0; index < listSize; index++) {
-            list.add(index, generateRandomString());
+            listExamples01 = new ListExamplesTest01();
+            list.add(index, listExamples01.generateRandomString());
         }
         list.forEach(out::println);
         list.forEach(data -> {
@@ -24,7 +27,7 @@ public class ListExamplesTest01 {
         });
     }
 
-    private static String generateRandomString() {
+    private String generateRandomString() {
         char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
         String list = new String(chars);
         String result = reverseByArray(list);
