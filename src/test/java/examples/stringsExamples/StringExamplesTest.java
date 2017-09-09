@@ -5,6 +5,8 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 import static examples.stringsExamples.StringExamples.exampleEndsWith;
 
@@ -44,6 +46,52 @@ public class StringExamplesTest {
     @Test
     public void negativeTest02StringExamplesEndsWith() throws Exception {
         assertNotEquals(exampleEndsWith(TEXT, ENDS), ENDS_2);
+        String methodName = Thread.currentThread()
+                .getStackTrace()[1]
+                .getMethodName()
+                .concat("()");
+        LOG.info(String.format("method <%s> passed successful", methodName));
+    }
+
+    @Test
+    public void negativeTest03StringExamplesEndsWith() throws Exception {
+        try {
+            assertEquals(exampleEndsWith(null, ENDS), ENDS);
+        } catch (AssertionError e) {
+            LOG.error(e.getStackTrace()[0]);
+            LOG.error(e.getStackTrace()[1]);
+        }
+        String methodName = Thread.currentThread()
+                .getStackTrace()[1]
+                .getMethodName()
+                .concat("()");
+        LOG.info(String.format("method <%s> passed successful", methodName));
+    }
+
+    @Test
+    public void negativeTest04StringExamplesEndsWith() throws Exception {
+        try {
+            assertEquals(exampleEndsWith(TEXT, null), ENDS);
+        } catch (AssertionError e) {
+            LOG.error(e.getStackTrace()[0]);
+            LOG.error(e.getStackTrace()[1]);
+        }
+        String methodName = Thread.currentThread()
+                .getStackTrace()[1]
+                .getMethodName()
+                .concat("()");
+        LOG.info(String.format("method <%s> passed successful", methodName));
+    }
+
+    @Test
+    public void negativeTest05StringExamplesEndsWith() throws Exception {
+        try {
+            assertEquals(exampleEndsWith(TEXT, ENDS), null);
+        } catch (AssertionError e) {
+            for (int i = 0; i < e.getStackTrace().length; i++) {
+                LOG.error(e.getStackTrace()[i]);
+            }
+        }
         String methodName = Thread.currentThread()
                 .getStackTrace()[1]
                 .getMethodName()
