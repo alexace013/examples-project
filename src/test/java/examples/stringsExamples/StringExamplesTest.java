@@ -5,6 +5,8 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 import static examples.stringsExamples.StringExamples.*;
 
@@ -88,9 +90,7 @@ public class StringExamplesTest {
         try {
             assertEquals(exampleEndsWith(TEXT, ENDS), null);
         } catch (AssertionError e) {
-            for (int i = 0; i < e.getStackTrace().length; i++) {
-                LOG.error(e.getStackTrace()[i]);
-            }
+            Arrays.asList(e.getStackTrace()).forEach(LOG::error);
         }
         String methodName = Thread.currentThread()
                 .getStackTrace()[1]
@@ -168,9 +168,7 @@ public class StringExamplesTest {
         try {
             assertEquals(exampleStartsWith(TEXT, STARTS), null);
         } catch (AssertionError e) {
-            for (int i = 0; i < e.getStackTrace().length; i++) {
-                LOG.error(e.getStackTrace()[i]);
-            }
+            Arrays.asList(e.getStackTrace()).forEach(LOG::error);
         }
         String methodName = Thread.currentThread()
                 .getStackTrace()[1]
