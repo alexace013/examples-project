@@ -1,8 +1,8 @@
 package examples.simpleCalc.actions;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import static java.lang.String.format;
@@ -11,7 +11,7 @@ import static java.lang.String.format;
 @ToString
 public class CalcActionsFactory {
 
-    private static final Logger LOG = Logger.getLogger(CalcActionsFactory.class);
+    private static Logger log = LogManager.getLogger(CalcActionsFactory.class);
 
     private CalcSum sum;
     private CalcDifference difference;
@@ -20,13 +20,13 @@ public class CalcActionsFactory {
 
     public CalcActionsFactory() {
         sum = new CalcSum();
-        LOG.info(format("create %s", sum.getClass().getName()));
+        log.info(format("create %s", sum.getClass().getName()));
         difference = new CalcDifference();
-        LOG.info(format("create %s", difference.getClass().getName()));
+        log.info(format("create %s", difference.getClass().getName()));
         multiplication = new CalcMultiplication();
-        LOG.info(format("create %s", multiplication.getClass().getName()));
+        log.info(format("create %s", multiplication.getClass().getName()));
         division = new CalcDivision();
-        LOG.info(format("create %s", division.getClass().getName()));
+        log.info(format("create %s", division.getClass().getName()));
     }
 
 }
