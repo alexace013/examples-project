@@ -11,7 +11,8 @@ import static java.lang.String.format;
 @ToString
 public class CalcActionsFactory {
 
-    private static Logger log = LogManager.getLogger(CalcActionsFactory.class);
+    private static final Logger LOG = LogManager.getLogger(CalcActionsFactory.class);
+    private static final String LOG_INFO_TEXT = "CREATED %s";
 
     private CalcSum sum;
     private CalcDifference difference;
@@ -19,14 +20,18 @@ public class CalcActionsFactory {
     private CalcDivision division;
 
     public CalcActionsFactory() {
+        createActions();
+        LOG.info(format(LOG_INFO_TEXT, getSum().getClass().getSimpleName()));
+        LOG.info(format(LOG_INFO_TEXT, getDifference().getClass().getSimpleName()));
+        LOG.info(format(LOG_INFO_TEXT, getMultiplication().getClass().getSimpleName()));
+        LOG.info(format(LOG_INFO_TEXT, getDivision().getClass().getSimpleName()));
+    }
+
+    private void createActions() {
         sum = new CalcSum();
-        log.info(format("create %s", sum.getClass().getName()));
         difference = new CalcDifference();
-        log.info(format("create %s", difference.getClass().getName()));
         multiplication = new CalcMultiplication();
-        log.info(format("create %s", multiplication.getClass().getName()));
         division = new CalcDivision();
-        log.info(format("create %s", division.getClass().getName()));
     }
 
 }
