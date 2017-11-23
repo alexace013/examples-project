@@ -25,7 +25,7 @@ public class MessageBuilder {
                 .append(mathAction)
                 .append(format(" %1$,.2f ", valueB))
                 .append(format("%s ", mathActionResult))
-                .append(format(" %1$,.2f ", result))
+                .append(format("%1$,.2f ", result))
                 .toString();
     }
 
@@ -44,7 +44,7 @@ public class MessageBuilder {
                 .append(mathAction)
                 .append(format(" %d ", valueB))
                 .append(format("%s ", mathActionResult))
-                .append(format(" %d ", result))
+                .append(format("%d ", result))
                 .toString();
     }
 
