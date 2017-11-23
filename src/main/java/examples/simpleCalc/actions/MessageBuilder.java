@@ -29,6 +29,7 @@ public class MessageBuilder {
                 .toString();
     }
 
+    @NotNull
     public static String getMessage(final String messageBody,
                                     final String status,
                                     final String mathAction,
