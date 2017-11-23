@@ -1,7 +1,6 @@
 package examples.simpleCalc;
 
 import examples.simpleCalc.actions.MessageBuilder;
-import lombok.extern.java.Log;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,8 +12,10 @@ import static org.junit.Assert.assertNotEquals;
 
 import static examples.simpleCalc.actions.MathAction.*;
 
-@Log
 class SimpleCalcDoubleTests {
+
+    public SimpleCalcDoubleTests() {
+    }
 
     private static final Logger LOG = LogManager.getLogger(SimpleCalcDoubleTests.class);
 

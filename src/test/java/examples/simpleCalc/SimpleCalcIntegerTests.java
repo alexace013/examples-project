@@ -1,17 +1,16 @@
 package examples.simpleCalc;
 
 import examples.simpleCalc.actions.MessageBuilder;
-import lombok.extern.java.Log;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static examples.simpleCalc.actions.MathAction.*;
 import static org.junit.Assert.*;
 import static java.lang.String.format;
 
-@Log
 class SimpleCalcIntegerTests {
 
     private static final Logger LOG = LogManager.getLogger(SimpleCalcIntegerTests.class);
@@ -36,6 +35,7 @@ class SimpleCalcIntegerTests {
         control = new CalcControl();
     }
 
+    @DisplayName(TEXT_SUM + TEXT_POSITIVE)
     @Test
     void testSumPositive() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -53,6 +53,7 @@ class SimpleCalcIntegerTests {
         assertEquals(POSITIVE_MESSAGE, VALUE_5, control.sum(VALUE_2, VALUE_3));
     }
 
+    @DisplayName(TEXT_SUM + TEXT_NEGATIVE)
     @Test
     void testSumNegative() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -70,6 +71,7 @@ class SimpleCalcIntegerTests {
         assertNotEquals(NEGATIVE_MESSAGE, VALUE_2, control.sum(VALUE_2, VALUE_2));
     }
 
+    @DisplayName(TEXT_DIFF + TEXT_POSITIVE)
     @Test
     void testDiffPositive() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -87,6 +89,7 @@ class SimpleCalcIntegerTests {
         assertEquals(POSITIVE_MESSAGE, VALUE_2, control.difference(VALUE_5, VALUE_3));
     }
 
+    @DisplayName(TEXT_DIFF + TEXT_NEGATIVE)
     @Test
     void testDiffNegative() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -104,6 +107,7 @@ class SimpleCalcIntegerTests {
         assertNotEquals(NEGATIVE_MESSAGE, VALUE_6, control.difference(VALUE_6, VALUE_5));
     }
 
+    @DisplayName(TEXT_MULT + TEXT_POSITIVE)
     @Test
     void testMultPositive() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -121,6 +125,7 @@ class SimpleCalcIntegerTests {
         assertEquals(POSITIVE_MESSAGE, VALUE_6, control.multiplication(VALUE_2, VALUE_3));
     }
 
+    @DisplayName(TEXT_MULT + TEXT_NEGATIVE)
     @Test
     void testMultNegative() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -138,6 +143,7 @@ class SimpleCalcIntegerTests {
         assertNotEquals(NEGATIVE_MESSAGE, VALUE_2, control.multiplication(VALUE_6, VALUE_3));
     }
 
+    @DisplayName(TEXT_DIV + TEXT_POSITIVE)
     @Test
     void testDivPositive() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -155,6 +161,7 @@ class SimpleCalcIntegerTests {
         assertEquals(POSITIVE_MESSAGE, VALUE_2, control.division(VALUE_6, VALUE_3));
     }
 
+    @DisplayName(TEXT_DIV + TEXT_NEGATIVE)
     @Test
     void testDivNegative() {
         LOG.info(format(CALLED_METHOD_TEXT,
