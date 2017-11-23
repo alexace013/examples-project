@@ -18,15 +18,15 @@ public class MessageBuilder {
                                     final double valueA,
                                     final double valueB,
                                     final double result) {
-        StringBuilder builder = new StringBuilder();
-        builder.append(format("%s ", messageBody))
+        return new StringBuilder()
+                .append(format("%s ", messageBody))
                 .append(format("%s", status))
                 .append(format(" %1$,.2f ", valueA))
                 .append(mathAction)
                 .append(format(" %1$,.2f ", valueB))
                 .append(format("%s ", mathActionResult))
-                .append(format(" %1$,.2f ", result));
-        return builder.toString();
+                .append(format(" %1$,.2f ", result))
+                .toString();
     }
 
     public static String getMessage(final String messageBody,
@@ -36,15 +36,15 @@ public class MessageBuilder {
                                     final int valueA,
                                     final int valueB,
                                     final int result) {
-        StringBuilder builder = new StringBuilder();
-        builder.append(format("%s ", messageBody))
+        return new StringBuilder()
+                .append(format("%s ", messageBody))
                 .append(format("%s", status))
                 .append(format(" %d ", valueA))
                 .append(mathAction)
                 .append(format(" %d ", valueB))
                 .append(format("%s ", mathActionResult))
-                .append(format(" %d ", result));
-        return builder.toString();
+                .append(format(" %d ", result))
+                .toString();
     }
 
 }
