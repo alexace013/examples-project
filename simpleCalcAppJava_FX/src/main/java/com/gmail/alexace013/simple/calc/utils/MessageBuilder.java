@@ -48,4 +48,19 @@ public class MessageBuilder {
                 .toString();
     }
 
+    @NotNull
+    public static String getDebugMessage(final Object valueA,
+                                         final String mathAction,
+                                         final Object valueB,
+                                         final String mathActionResult,
+                                         final Object result) {
+        return new StringBuilder()
+                .append(format("%s ", valueA))
+                .append(format("%s ", mathAction))
+                .append(format("%s ", valueB))
+                .append(format("%s", mathActionResult))
+                .append(format(" %s", result))
+                .toString();
+    }
+
 }

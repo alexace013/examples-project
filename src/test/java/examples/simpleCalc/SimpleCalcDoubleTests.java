@@ -25,15 +25,15 @@ class SimpleCalcDoubleTests {
     private static final double VALUE_1_5 = 1.5d;
     private static final double VALUE_6_0 = 6.0d;
     private static final double VALUE_DELTA = 0.5d;
-    private static final java.lang.String NEGATIVE_MESSAGE = "something wrongs";
-    private static final java.lang.String POSITIVE_MESSAGE = NEGATIVE_MESSAGE;
-    private static final java.lang.String CALLED_METHOD_TEXT = "CALLED %s TEST METHOD";
-    private static final java.lang.String TEXT_POSITIVE = "POSITIVE TEST";
-    private static final java.lang.String TEXT_NEGATIVE = "NEGATIVE TEST";
-    private static final java.lang.String TEXT_SUM = "SUM:";
-    private static final java.lang.String TEXT_DIFF = "DIFFERENCE:";
-    private static final java.lang.String TEXT_MULT = "MULTIPLICATION:";
-    private static final java.lang.String TEXT_DIV = "DIVISION:";
+    private static final String NEGATIVE_MESSAGE = "something wrongs";
+    private static final String POSITIVE_MESSAGE = NEGATIVE_MESSAGE;
+    private static final String CALLED_METHOD_TEXT = "CALLED %s TEST METHOD";
+    private static final String TEXT_POSITIVE = "POSITIVE TEST";
+    private static final String TEXT_NEGATIVE = "NEGATIVE TEST";
+    private static final String TEXT_SUM = "SUM:";
+    private static final String TEXT_DIFF = "DIFFERENCE:";
+    private static final String TEXT_MULT = "MULTIPLICATION:";
+    private static final String TEXT_DIV = "DIVISION:";
 
     @BeforeAll
     static void createCalcControl() {

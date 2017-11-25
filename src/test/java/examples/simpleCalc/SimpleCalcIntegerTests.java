@@ -23,12 +23,12 @@ class SimpleCalcIntegerTests {
     private static final String NEGATIVE_MESSAGE = "something wrongs";
     private static final String POSITIVE_MESSAGE = NEGATIVE_MESSAGE;
     private static final String CALLED_METHOD_TEXT = "CALLED %s TEST METHOD";
-    private static final java.lang.String TEXT_POSITIVE = "POSITIVE TEST";
-    private static final java.lang.String TEXT_NEGATIVE = "NEGATIVE TEST";
-    private static final java.lang.String TEXT_SUM = "SUM:";
-    private static final java.lang.String TEXT_DIFF = "DIFFERENCE:";
-    private static final java.lang.String TEXT_MULT = "MULTIPLICATION:";
-    private static final java.lang.String TEXT_DIV = "DIVISION:";
+    private static final String TEXT_POSITIVE = "POSITIVE TEST";
+    private static final String TEXT_NEGATIVE = "NEGATIVE TEST";
+    private static final String TEXT_SUM = "SUM:";
+    private static final String TEXT_DIFF = "DIFFERENCE:";
+    private static final String TEXT_MULT = "MULTIPLICATION:";
+    private static final String TEXT_DIV = "DIVISION:";
 
     @BeforeAll
     static void createCalcControl() {

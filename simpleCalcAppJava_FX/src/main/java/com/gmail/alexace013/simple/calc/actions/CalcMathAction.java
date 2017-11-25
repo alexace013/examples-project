@@ -3,7 +3,7 @@ package com.gmail.alexace013.simple.calc.actions;
 import lombok.Getter;
 
 @Getter
-enum CalcMathAction {
+public enum CalcMathAction {
 
     PLUS("+"),
     MINUS("-"),
