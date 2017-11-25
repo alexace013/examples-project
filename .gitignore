@@ -11,6 +11,8 @@
 /target
 examples-project.iml
 
+/simpleCalcAppJava_FX/target
+
 # Package Files #
 *.jar
 *.war
