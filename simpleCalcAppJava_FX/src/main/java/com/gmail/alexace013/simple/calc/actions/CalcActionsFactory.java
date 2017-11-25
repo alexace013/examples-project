@@ -3,7 +3,7 @@ package com.gmail.alexace013.simple.calc.actions;
 import lombok.Getter;
 import lombok.ToString;
 
-import static com.gmail.alexace013.simple.calc.utils.Log4JWrapper.debug;
+import static com.gmail.alexace013.simple.calc.logger.Log4JWrapper.debug;
 
 import static java.lang.String.format;
 
@@ -32,6 +32,10 @@ public class CalcActionsFactory {
         difference = new CalcDifference();
         multiplication = new CalcMultiplication();
         division = new CalcDivision();
+    }
+
+    public CalcActionsFactory getInstance() {
+        return calcActionsFactory;
     }
 
 }

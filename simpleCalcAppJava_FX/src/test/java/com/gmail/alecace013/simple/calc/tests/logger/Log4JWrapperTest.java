@@ -1,6 +1,6 @@
 package com.gmail.alecace013.simple.calc.tests.logger;
 
-import com.gmail.alexace013.simple.calc.utils.Log4JWrapper;
+import com.gmail.alexace013.simple.calc.logger.Log4JWrapper;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;

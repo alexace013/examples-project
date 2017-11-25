@@ -5,7 +5,7 @@ import com.gmail.alexace013.simple.calc.exception.PropertyReaderUtilException;
 import java.io.IOException;
 import java.util.Properties;
 
-import static com.gmail.alexace013.simple.calc.utils.Log4JWrapper.error;
+import static com.gmail.alexace013.simple.calc.logger.Log4JWrapper.error;
 
 public class PropertyReaderUtil {
 
