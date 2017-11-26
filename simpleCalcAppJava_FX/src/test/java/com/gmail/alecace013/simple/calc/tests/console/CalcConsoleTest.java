@@ -18,11 +18,13 @@ public class CalcConsoleTest {
     public static void runCalc() throws IOException, CalcInputDataDataException {
         calcInputControl = new CalcInputControl();
         info("input value a: ");
-        int a = Integer.parseInt(reader.readLine());
+//        int a = Integer.parseInt(reader.readLine());
+        double a = Double.parseDouble(reader.readLine());
         info("input math action: ");
         String mathAction = reader.readLine();
         info("input value b: ");
-        int b = Integer.parseInt(reader.readLine());
+//        int b = Integer.parseInt(reader.readLine());
+        double b = Double.parseDouble(reader.readLine());
         info(String.format("result = %s", calcInputControl.calcInput(a, mathAction, b)));
     }
 
