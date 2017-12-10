@@ -1,5 +1,6 @@
 package examples.com.javacodegeeks.utils;
 
+import examples.com.javacodegeeks.utils.exceptions.InfoReaderException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;
@@ -34,8 +35,3 @@ public class InfoReaderUtil {
 
 }
 
-class InfoReaderException extends Exception {
-    InfoReaderException(final String msg) {
-        super(String.format("INFO_READER_EXCEPTION: %s", msg));
-    }
-}
