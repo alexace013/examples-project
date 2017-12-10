@@ -36,16 +36,6 @@ public class CopyFileExamples {
         return ORIGINAL_FILE_NAME;
     }
 
-    public static void main(String[] args) {
-        CopyFileExamples ioApiExample = new CopyFileExamples();
-        File file = new File(PROJECT_DIR + "/src/main/java/examples/copyFileExample/original/original.txt");
-        try {
-            ioApiExample.ioApiCopyExample(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     boolean ioApiCopyExample(final File original) throws IOException {
         File copied = new File(PROJECT_DIR + COPY_DIR + IO_API_FILE_NAME);
         try (
