@@ -16,7 +16,7 @@ public class Log4JWrapper {
     private static final Logger LOGGER = getLogger(Log4JWrapper.getCurrentClassName());
     private static final String LOG_4_J_WRAPPER_PROPERTIES = "/log4JWrapper.properties";
     private static final String LOG_FILE_NAME = "calc.app.log";
-    private static final String USER_DIR = "user.dir";
+    private static final String USER_DIR = "user.dir.copy";
     private static final String LOG_PATH = "log.path";
 
     private static String getCurrentClassName() {
