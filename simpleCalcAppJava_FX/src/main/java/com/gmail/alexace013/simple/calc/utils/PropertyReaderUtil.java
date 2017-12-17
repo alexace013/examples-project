@@ -21,6 +21,6 @@ public class PropertyReaderUtil {
         if (parameter != null) {
             return properties.getProperty(parameter);
         }
-        throw new PropertyReaderUtilException("property parameter is null");
+        throw new PropertyReaderUtilException("propertyLoader parameter is null");
     }
 }

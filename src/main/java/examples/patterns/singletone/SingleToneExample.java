@@ -1,6 +1,6 @@
 package examples.patterns.singletone;
 
-import examples.annotations.DebugMode;
+import utils.annotations.DebugMode;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;
@@ -29,7 +29,7 @@ public class SingleToneExample implements Serializable {
         return serialVersionUID;
     }
 
-    @DebugMode(version = 0.1)
+    @DebugMode(version = 0.2)
     public static void main(String[] args) {
         SingleToneExample inst = SingleToneExample.getInstance();
         LOG.debug(String.format("instance one -> serialVersionUID: %d",

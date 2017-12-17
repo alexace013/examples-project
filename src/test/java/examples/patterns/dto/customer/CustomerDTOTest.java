@@ -17,6 +17,7 @@ public class CustomerDTOTest {
     public void createdCustomersList() {
         List<CustomerDTO> testCustomerDTOList = customerCreator.createdCustomers();
         Assert.assertTrue("incorrect list size", testCustomerDTOList.size() > 0);
+        Assert.assertEquals(testCustomerDTOList.size(), CustomerCreator.getDefaultValue());
     }
 
     @Test

@@ -1,17 +1,27 @@
 package examples.patterns.dto.customer;
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
+import utils.propertyLoader.PropertyLoaderPrototype;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.IntStream;
 
 public final class CustomerCreator {
 
     private int customerCount;
+    private static final PropertyLoaderPrototype CUSTOMER_PROPERTY = new PropertyLoaderPrototype("/patterns/customer.properties");
+    private static final int DEFAULT_VALUE = CUSTOMER_PROPERTY.getParamAsIntegerValue("default.value");
+
+    @Contract(pure = true)
+    public static int getDefaultValue() {
+        return DEFAULT_VALUE;
+    }
 
     public CustomerCreator() {
-
+        customerCount = DEFAULT_VALUE;
     }
 
     public CustomerCreator(final int customerCount) {
@@ -20,14 +30,14 @@ public final class CustomerCreator {
 
     public List<CustomerDTO> createdCustomers() {
         List<CustomerDTO> customersList = new ArrayList<>();
-        for (int i = 0; i < customerCount; i++) {
-            CustomerDTO customerDTO = new CustomerDTO();
-            DataGenerator dataGenerator = new DataGenerator();
-            customerDTO.setFirstName(dataGenerator.generateRandomCustomerData()[0]);
-            customerDTO.setLasName(dataGenerator.generateRandomCustomerData()[1]);
-            customerDTO.setCompany(dataGenerator.generateRandomCustomerData()[2]);
-            customersList.add(customerDTO);
-        }
+        IntStream.range(0, customerCount).mapToObj(customer -> new CustomerDTO())
+                .forEach(customerDTO -> {
+                    DataGenerator dataGenerator = new DataGenerator();
+                    customerDTO.setFirstName(dataGenerator.generateRandomCustomerData()[0]);
+                    customerDTO.setLasName(dataGenerator.generateRandomCustomerData()[1]);
+                    customerDTO.setCompany(dataGenerator.generateRandomCustomerData()[2]);
+                    customersList.add(customerDTO);
+                });
         return customersList;
     }
 
