@@ -1,4 +1,4 @@
-package examples.dtoExamples.customer;
+package examples.patterns.dto.customer;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

@@ -1,8 +1,7 @@
-package examples.dtoExamples.customer;
+package examples.patterns.dto.customer;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.jetbrains.annotations.Contract;
 
 import java.io.Serializable;
 import java.util.UUID;
