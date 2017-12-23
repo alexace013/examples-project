@@ -26,7 +26,7 @@ public final class NameGenerator implements IGenerator<String> {
     @Override
     public String generate() {
         final int randomIndex = new Random().nextInt(FileReaderUtil.readFile(USER_DIR + FILE_PATH, FILE_NAME).size());
-        return generateList().get(randomIndex).trim();
+        return generateList().get(randomIndex).split(" ")[0].trim();
     }
 
     @Override

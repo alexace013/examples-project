@@ -11,7 +11,7 @@ public class MapExampleTest {
 
     private MapExample<Integer, String> mapExample = new MapExample<>();
     private NameGenerator nameGenerator = new NameGenerator();
-    private static final byte RANGE_VALUE = 100;
+    private static final short RANGE_VALUE = 200;
 
     @Test
     public void test01() {
