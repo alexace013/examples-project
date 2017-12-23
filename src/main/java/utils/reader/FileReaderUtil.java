@@ -2,12 +2,17 @@ package utils.reader;
 
 import utils.logger.Log4JWrapper;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class FileReader {
+public class FileReaderUtil {
 
-    public static String readFile(final String pathToFile, final String fileName) {
+    private static BufferedReader bufferedReader;
+
+    public static List<String> readFile(final String pathToFile, final String fileName) {
+        List<String> readFileDataAsList = Collections.emptyList();
         if (pathToFile == null) {
             try {
                 throw new Exception(String.format("path to file < %s > is NULL", pathToFile));
@@ -22,11 +27,21 @@ public class FileReader {
             }
         }
         try {
-            java.io.FileReader fileReader = new java.io.FileReader(new File(pathToFile, fileName));
-        } catch (FileNotFoundException e) {
-            Log4JWrapper.debug("");
+            bufferedReader = new BufferedReader(new FileReader(new File(pathToFile, fileName)));
+            String currentLine;
+            readFileDataAsList = new ArrayList<>();
+            while ((currentLine = bufferedReader.readLine()) != null) {
+                readFileDataAsList.add(currentLine);
+            }
+        } catch (IOException e) {
+            Log4JWrapper.debug(String.format("path to file < %s > or file name < %s > are failed", pathToFile, fileName));
             Log4JWrapper.error(e.getMessage());
         }
+        return readFileDataAsList;
     }
 
+    @Override
+    protected void finalize() throws Throwable {
+        bufferedReader.close();
+    }
 }

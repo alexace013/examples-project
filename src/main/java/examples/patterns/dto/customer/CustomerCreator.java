@@ -2,6 +2,7 @@ package examples.patterns.dto.customer;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
+import utils.projectPropertiesLoader.Property;
 import utils.propertyLoader.PropertyLoaderPrototype;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.stream.IntStream;
 public final class CustomerCreator {
 
     private int customerCount;
-    private static final PropertyLoaderPrototype CUSTOMER_PROPERTY = new PropertyLoaderPrototype("/patterns/customer.properties");
+    private static final PropertyLoaderPrototype CUSTOMER_PROPERTY = new PropertyLoaderPrototype(Property.CUSTOMER.getProperty());
     private static final int DEFAULT_VALUE = CUSTOMER_PROPERTY.getParamAsIntegerValue("default.value");
 
     @Contract(pure = true)
