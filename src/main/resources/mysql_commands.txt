@@ -1,0 +1,6 @@
+mysql -u root -p
+
+SHOW databases;
+USE database_name;
+SHOW tables;
+SHOW COLUMNS FROM table_name;

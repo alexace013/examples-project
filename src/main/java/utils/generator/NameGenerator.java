@@ -29,6 +29,16 @@ public final class NameGenerator implements IGenerator<String> {
         return generateList().get(randomIndex).split(" ")[0].trim();
     }
 
+    public String generateFirstName() {
+        final int randomIndex = new Random().nextInt(FileReaderUtil.readFile(USER_DIR + FILE_PATH, FILE_NAME).size());
+        return generateList().get(randomIndex).split(" ")[0].trim();
+    }
+
+    public String generateLastName() {
+        final int randomIndex = new Random().nextInt(FileReaderUtil.readFile(USER_DIR + FILE_PATH, FILE_NAME).size());
+        return generateList().get(randomIndex).split(" ")[1].trim();
+    }
+
     @Override
     public List<String> generateList() {
         return FileReaderUtil.readFile(USER_DIR + FILE_PATH, FILE_NAME);
