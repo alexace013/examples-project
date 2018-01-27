@@ -5,7 +5,8 @@ import org.jetbrains.annotations.Contract;
 public enum Property {
 
     CUSTOMER("/patterns/customer.properties"),
-    NAME("/txt/name.properties");
+    NAME("/txt/name.properties"),
+    MAIL_REGEX("/regex/mail/mrgx.properties");
 
     private String property;
 

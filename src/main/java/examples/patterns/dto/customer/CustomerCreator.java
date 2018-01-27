@@ -33,7 +33,7 @@ public final class CustomerCreator {
         List<CustomerDTO> customersList = new ArrayList<>();
         IntStream.range(0, customerCount).mapToObj(customer -> new CustomerDTO())
                 .forEach(customerDTO -> {
-                    DataGenerator dataGenerator = new DataGenerator();
+                    CustomerDataGenerator dataGenerator = new CustomerDataGenerator();
                     customerDTO.setFirstName(dataGenerator.generateRandomCustomerData()[0]);
                     customerDTO.setLasName(dataGenerator.generateRandomCustomerData()[1]);
                     customerDTO.setCompany(dataGenerator.generateRandomCustomerData()[2]);
@@ -42,7 +42,7 @@ public final class CustomerCreator {
         return customersList;
     }
 
-    private class DataGenerator {
+    private class CustomerDataGenerator {
 
         private static final String GTC_FIRST_NAME_TEXT = "CustomerFirstName_%d";
         private static final String GTC_LAST_NAME_TEXT = "CustomerLastName_%d";
