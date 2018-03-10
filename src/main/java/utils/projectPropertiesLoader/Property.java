@@ -5,7 +5,8 @@ import org.jetbrains.annotations.Contract;
 public enum Property {
 
     CUSTOMER("/patterns/customer.properties"),
-    NAME("/txt/name.properties");
+    NAME("/txt/name.properties"),
+    REST("/rest/data.properties");
 
     private String property;
 

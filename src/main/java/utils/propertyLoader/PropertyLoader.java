@@ -3,6 +3,7 @@ package utils.propertyLoader;
 import java.io.IOException;
 import java.util.Properties;
 
+@Deprecated
 public class PropertyLoader {
 
     private static final String PROPERTY_FILE = "/testDataText.properties";
