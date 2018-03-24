@@ -8,7 +8,10 @@ import utils.logger.Log4JWrapper;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 public class PropertyLoaderPrototype implements Serializable {
 
@@ -17,6 +20,7 @@ public class PropertyLoaderPrototype implements Serializable {
     private static final String MESSAGE_TEXT = "PROPERTY %s HAVE SOME PROBLEMS";
     private static final String PROPERTY_LOAD_ERROR = "PROPERTIES AREN'T LOADED";
     private static final Properties PROPERTIES = new Properties();
+    private static Map propertiesMap = new HashMap<>();
 
     public PropertyLoaderPrototype(final String... properties) {
         for (String property : properties) {
@@ -59,6 +63,7 @@ public class PropertyLoaderPrototype implements Serializable {
             try {
                 for (String propertyName : properties) {
                     PROPERTIES.load(PropertyLoaderPrototype.class.getResourceAsStream(propertyName));
+                    propertiesMap = PROPERTIES;
                 }
             } catch (IOException | NullPointerException e) {
                 if (e instanceof NullPointerException) {
