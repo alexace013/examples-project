@@ -8,7 +8,7 @@ public enum ChatConfiguration {
     DEFAULT_CAPACITY(100),
     DEFAULT_PORT(30000),
     LOCAL_HOST("localhost"),
-    EXIT("exit");
+    COMMAND_EXIT("exit");
 
     private Object config;
 

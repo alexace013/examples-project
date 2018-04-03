@@ -12,7 +12,7 @@ import utils.logger.Log4JWrapper;
 import static examples.chat_example.config.ChatConfiguration.LOCAL_HOST;
 import static examples.chat_example.config.ChatConfiguration.DEFAULT_PORT;
 import static examples.chat_example.config.ChatConfiguration.DEFAULT_CAPACITY;
-import static examples.chat_example.config.ChatConfiguration.EXIT;
+import static examples.chat_example.config.ChatConfiguration.COMMAND_EXIT;
 
 public class AsyncChatDemo implements IChat {
 
@@ -31,13 +31,13 @@ class DemoServer implements Runnable {
     @Override
     public void run() {
         try {
-            ServerSocketChannel socketChannel = ServerSocketChannel.open();
-            socketChannel.socket().bind(new InetSocketAddress((int) DEFAULT_PORT.getConfig()));
-            SocketChannel client = socketChannel.accept();
+            ServerSocketChannel serverChannel = ServerSocketChannel.open();
+            serverChannel.socket().bind(new InetSocketAddress((int) DEFAULT_PORT.getConfig()));
+            SocketChannel client = serverChannel.accept();
             ByteBuffer buffer = ByteBuffer.allocate((int) DEFAULT_CAPACITY.getConfig());
             while (true) {
                 buffer.clear();
-                System.out.println("Message: " + new String(buffer.array(), 0, client.read(buffer)));
+                System.out.print("\n[SERVER] Message: " + new String(buffer.array(), 0, client.read(buffer)));
                 buffer.rewind();
             }
         } catch (IOException e) {
@@ -52,19 +52,19 @@ class DemoClient implements Runnable {
     @Override
     public void run() {
         try {
-            SocketChannel chan = SocketChannel.open();
-            chan.connect(new InetSocketAddress((String) LOCAL_HOST.getConfig(), (int) DEFAULT_PORT.getConfig()));
-            ByteBuffer bf = ByteBuffer.allocate((int) DEFAULT_CAPACITY.getConfig());
+            SocketChannel clientChannel = SocketChannel.open();
+            clientChannel.connect(new InetSocketAddress((String) LOCAL_HOST.getConfig(), (int) DEFAULT_PORT.getConfig()));
+            ByteBuffer buffer = ByteBuffer.allocate((int) DEFAULT_CAPACITY.getConfig());
+            Scanner scanner = new Scanner(System.in);
             while (true) {
-                bf.clear();
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Enter message: ");
-                if (scan.hasNext()) {
-                    bf.put(scan.next().getBytes());
-                    bf.flip();
-                    chan.write(bf);
-                    // TODO feature with 'exit' text
-//                    exitCheck(scan.nextLine());
+                buffer.clear();
+                System.out.print("[CLIENT] Enter message: ");
+                if (scanner.hasNext()) {
+                    final String message = scanner.nextLine();
+                    exit(message);
+                    buffer.put(message.getBytes());
+                    buffer.flip();
+                    clientChannel.write(buffer);
                 }
             }
         } catch (IOException e) {
@@ -72,9 +72,12 @@ class DemoClient implements Runnable {
         }
     }
 
-    // TODO feature with 'exit' text
-    private static void exitCheck(final String text) {
-        if (text.equals(EXIT.getConfig().toString())) {
+    static boolean isExit(final String text) {
+        return text.equals(COMMAND_EXIT.getConfig().toString());
+    }
+
+    private static void exit(final String text) {
+        if (isExit(text)) {
             System.exit(0);
         }
     }
