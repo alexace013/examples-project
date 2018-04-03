@@ -6,7 +6,8 @@ public enum Property {
 
     CUSTOMER("/patterns/customer.properties"),
     NAME("/txt/name.properties"),
-    REST("/rest/data.properties");
+    REST("/rest/data.properties"),
+    MAIL_REGEX("/regex/mail/mrgx.properties");
 
     private String property;
 
