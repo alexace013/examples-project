@@ -8,3 +8,13 @@
 17 [pool-1-thread-1] WARN com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - WARN: warn test
 17 [pool-1-thread-1] WARN com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - WARN: warn test
 17 [pool-1-thread-1] WARN com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - WARN: warn test
+14 [pool-1-thread-1] ERROR com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - ERROR: error test
+29 [pool-1-thread-1] INFO com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - INFO: info test
+29 [pool-1-thread-1] INFO com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - INFO: info test
+30 [pool-1-thread-1] TRACE com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - TRACE: trace test
+30 [pool-1-thread-1] TRACE com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - TRACE: trace test
+30 [pool-1-thread-1] TRACE com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - TRACE: trace test
+31 [pool-1-thread-1] WARN com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - WARN: warn test
+31 [pool-1-thread-1] WARN com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - WARN: warn test
+31 [pool-1-thread-1] WARN com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - WARN: warn test
+31 [pool-1-thread-1] WARN com.gmail.alexace013.simple.calc.logger.Log4JWrapper  - WARN: warn test
