@@ -1,6 +1,6 @@
-package examples.jSonParseExamplesTests;
+package examples.json_examples.jSonParseExamplesTests;
 
-import examples.jsonParseExamples.UtilJSONParse;
+import examples.json_examples.jsonParseExamples.UtilJSONParse;
 import org.apache.log4j.Logger;
 import org.junit.FixMethodOrder;
 import org.junit.Test;

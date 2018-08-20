@@ -1,4 +1,4 @@
-package examples.jsonParseExamples;
+package examples.json_examples.jsonParseExamples;
 
 import org.jetbrains.annotations.Nullable;
 import org.json.JSONException;
