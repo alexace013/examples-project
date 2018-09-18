@@ -13,6 +13,7 @@ examples-project.iml
 
 /simpleCalcAppJava_FX/target
 /simpleCalcAppJava_FX/simpleCalcAppJava_FX.iml
+/simpleCalcAppJava_FX/simple-calc-app-java-fx.iml
 
 # Package Files #
 *.jar
