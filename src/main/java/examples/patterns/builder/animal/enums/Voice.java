@@ -1,4 +1,4 @@
-package examples.patterns.builder.animal;
+package examples.patterns.builder.animal.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

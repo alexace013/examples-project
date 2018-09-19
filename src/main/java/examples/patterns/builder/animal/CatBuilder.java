@@ -1,13 +1,13 @@
 package examples.patterns.builder.animal;
 
+import examples.patterns.builder.animal.enums.Name;
+import examples.patterns.builder.animal.enums.Weight;
 import lombok.ToString;
 
-import static examples.patterns.builder.animal.Voice.CAT;
+import static examples.patterns.builder.animal.enums.Voice.CAT;
 
 @ToString
 public class CatBuilder extends AnimalBuilder {
-
-    private static final short DEFAULT_CAT_WEIGHT = 5;
 
     @Override
     void createAnimalName() {
@@ -16,7 +16,7 @@ public class CatBuilder extends AnimalBuilder {
 
     @Override
     void createAnimalWeight() {
-        getAnimal().setWeight(DEFAULT_CAT_WEIGHT);
+        getAnimal().setWeight(Weight.CAT.getValue());
     }
 
     @Override

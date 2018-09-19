@@ -1,13 +1,13 @@
 package examples.patterns.builder.animal;
 
-import static examples.patterns.builder.animal.Voice.PIRATE;
+import static examples.patterns.builder.animal.enums.Voice.PIRATE;
 
+import examples.patterns.builder.animal.enums.Name;
+import examples.patterns.builder.animal.enums.Weight;
 import lombok.ToString;
 
 @ToString
 public class PirateBuilder extends AnimalBuilder {
-
-    private static final short DEFAULT_PIRATE_WEIGHT = 50;
 
     @Override
     void createAnimalName() {
@@ -16,7 +16,7 @@ public class PirateBuilder extends AnimalBuilder {
 
     @Override
     void createAnimalWeight() {
-        getAnimal().setWeight(DEFAULT_PIRATE_WEIGHT);
+        getAnimal().setWeight(Weight.PIRATE.getValue());
     }
 
     @Override

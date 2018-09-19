@@ -1,7 +1,7 @@
-package examples.patterns.builder.animal;
+package examples.patterns.builder.animal.enums;
 
-import static examples.patterns.builder.animal.Name.NameParam.NAME;
-import static examples.patterns.builder.animal.Name.NameParam.UNDERSCORE;
+import static examples.patterns.builder.animal.enums.Name.NameParam.NAME;
+import static examples.patterns.builder.animal.enums.Name.NameParam.UNDERSCORE;
 
 import com.github.javafaker.Faker;
 import lombok.AllArgsConstructor;
