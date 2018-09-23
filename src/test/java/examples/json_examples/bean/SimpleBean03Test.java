@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 @Log4j
-public class SimpleBeanTest03 {
+public class SimpleBean03Test {
 
     @Test
     public void whenSerializingUsingJsonPropertyOrder_thenCorrect()

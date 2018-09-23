@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitPlatform.class)
 @SelectClasses({
-        SimpleCalcIntegerTests.class,
-        SimpleCalcDoubleTests.class
+        SimpleCalcIntegerTest.class,
+        SimpleCalcDoubleTest.class
 })
-public class SimpleCalcTestsRunner {
+public class SimpleCalcRunnerTest {
 }

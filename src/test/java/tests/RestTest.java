@@ -7,11 +7,11 @@ import utils.Rest;
 
 import static org.junit.Assert.assertEquals;
 
-public class RestTests {
+public class RestTest {
 
     private Rest rest = new Rest();
     private int index = 0;
-    private static final Logger log = Logger.getLogger(RestTests.class);
+    private static final Logger log = Logger.getLogger(RestTest.class);
 
     @Test
     public void getRequestFindCapital() throws JSONException {

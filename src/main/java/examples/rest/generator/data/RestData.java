@@ -1,5 +1,6 @@
 package examples.rest.generator.data;
 
+import com.github.javafaker.Faker;
 import lombok.Getter;
 
 @Getter
@@ -19,7 +20,8 @@ public enum RestData {
     PARAM("parameter"),
     PARAM_VAL(PARAM.getRestDataParameter()
             + DOT.getRestDataParameter()
-            + VAL.getRestDataParameter());
+            + VAL.getRestDataParameter()),
+    RANDOM(new Faker().artist().name());
 
     private String restDataParameter;
 

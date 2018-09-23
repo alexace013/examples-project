@@ -9,11 +9,11 @@ import utils.propertyLoader.PropertyLoader;
 
 import static org.junit.Assert.*;
 
-public class ListExamples02Test01 {
+public class ListExamples03Test {
 
     private static ListExamples02 listExamples02;
     private static String TEST_DATA;
-    private static final Logger LOG = Logger.getLogger(ListExamples02Test01.class);
+    private static final Logger LOG = Logger.getLogger(ListExamples03Test.class);
 
     @BeforeClass
     public static void preCondition() {

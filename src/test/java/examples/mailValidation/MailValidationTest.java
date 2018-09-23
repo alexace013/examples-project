@@ -9,7 +9,7 @@ import org.junit.runners.MethodSorters;
 import utils.logger.Log4JWrapper;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class MailValidationTests {
+public class MailValidationTest {
 
     @Rule
     public TestName name = new TestName();

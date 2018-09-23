@@ -7,7 +7,7 @@ import java.util.*;
 
 import static java.lang.System.out;
 
-public class ListExamplesTest01 {
+public class ListExamples04Test {
 
     ///simple example. Need rewrite with JUnit annotations and tests
     public static void main(String[] args) {
@@ -16,9 +16,9 @@ public class ListExamplesTest01 {
 
         short listSize = 1000;
         List<String> list = new ArrayList<>();
-        ListExamplesTest01 listExamples01;
+        ListExamples04Test listExamples01;
         for (short index = 0; index < listSize; index++) {
-            listExamples01 = new ListExamplesTest01();
+            listExamples01 = new ListExamples04Test();
             list.add(index, listExamples01.generateRandomString());
         }
         list.forEach(out::println);

@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 @Log4j
-public class SimpleBeanTest02 {
+public class SimpleBean02Test {
 
     @Test
     public void whenSerializingUsingJsonGetter_thenCorrect()

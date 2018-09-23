@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestSomeGeneric {
+public class SomeGenericTest {
 
     private static List<SomeGeneric<Object>> list = new ArrayList<SomeGeneric<Object>>();
 

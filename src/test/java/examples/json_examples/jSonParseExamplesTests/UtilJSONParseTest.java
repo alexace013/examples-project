@@ -9,9 +9,9 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class UtilJSONParseTests {
+public class UtilJSONParseTest {
 
-    private static final Logger log = Logger.getLogger(UtilJSONParseTests.class);
+    private static final Logger log = Logger.getLogger(UtilJSONParseTest.class);
     private static final String STR_JSON = "{ \"name\": \"Test\", \"value\": 0 }";
 
     @Test

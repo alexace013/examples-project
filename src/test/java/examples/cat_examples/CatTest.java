@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class Test_Cat {
+public class CatTest {
 
     private static final Object[] CAT_DATA_1 = {"Barsik", 15, "yellow", 25, 40};
     private static Cat cat1;

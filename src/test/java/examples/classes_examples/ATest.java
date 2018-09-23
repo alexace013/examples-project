@@ -6,9 +6,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class TestA {
+public class ATest {
 
-    private static final Logger log = Logger.getLogger(TestA.class);
+    private static final Logger log = Logger.getLogger(ATest.class);
     private A a;
 
     @Before

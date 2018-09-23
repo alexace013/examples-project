@@ -7,8 +7,6 @@ import java.lang.annotation.*;
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Develop {
-
     String author() default "dev";
     String status() default "develop";
-
 }

@@ -9,7 +9,7 @@ import org.junit.Test;
 import java.util.Map;
 
 @Log4j
-public class SimpleBeanTest01 {
+public class SimpleBean01Test {
 
     @Test
     public void whenSerializingUsingJsonAnyGetter_thenCorrect()

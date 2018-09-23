@@ -7,7 +7,7 @@ import org.junit.Test;
 import static java.lang.String.format;
 import static examples.patterns.factory.figures.Figure.ZERO_VALUE;
 
-public class FiguresTests {
+public class FiguresTest {
 
     private static final String ASSERT_MESSAGE = "Some wrong with <%s> figure.";
     private static final byte DEFAULT_TEST_VALUE_4 = 4;

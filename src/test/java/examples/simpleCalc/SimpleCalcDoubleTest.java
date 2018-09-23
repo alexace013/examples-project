@@ -4,22 +4,27 @@ import examples.simpleCalc.actions.MessageBuilder;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static examples.simpleCalc.actions.MathAction.*;
-import static org.junit.Assert.*;
 import static java.lang.String.format;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
-class SimpleCalcIntegerTests {
+import static examples.simpleCalc.actions.MathAction.*;
 
-    private static final Logger LOG = LogManager.getLogger(SimpleCalcIntegerTests.class);
+class SimpleCalcDoubleTest {
+
+    public SimpleCalcDoubleTest() {
+    }
+
+    private static final Logger LOG = LogManager.getLogger(SimpleCalcDoubleTest.class);
 
     private static CalcControl control;
-    private static final int VALUE_2 = 2;
-    private static final int VALUE_3 = 3;
-    private static final int VALUE_5 = 5;
-    private static final int VALUE_6 = 6;
+    private static final double VALUE_2_25 = 2.25d;
+    private static final double VALUE_3_75 = 3.75d;
+    private static final double VALUE_1_5 = 1.5d;
+    private static final double VALUE_6_0 = 6.0d;
+    private static final double VALUE_DELTA = 0.5d;
     private static final String NEGATIVE_MESSAGE = "something wrongs";
     private static final String POSITIVE_MESSAGE = NEGATIVE_MESSAGE;
     private static final String CALLED_METHOD_TEXT = "CALLED %s TEST METHOD";
@@ -35,7 +40,6 @@ class SimpleCalcIntegerTests {
         control = new CalcControl();
     }
 
-    @DisplayName(TEXT_SUM + TEXT_POSITIVE)
     @Test
     void testSumPositive() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -45,15 +49,14 @@ class SimpleCalcIntegerTests {
                         TEXT_POSITIVE,
                         PLUS.getMathAction(),
                         RESULT.getMathAction(),
-                        VALUE_2,
-                        VALUE_3,
-                        VALUE_5
+                        VALUE_2_25,
+                        VALUE_3_75,
+                        VALUE_6_0
                 )
         );
-        assertEquals(POSITIVE_MESSAGE, VALUE_5, control.sum(VALUE_2, VALUE_3));
+        assertEquals(POSITIVE_MESSAGE, VALUE_6_0, control.sum(VALUE_2_25, VALUE_3_75), VALUE_DELTA);
     }
 
-    @DisplayName(TEXT_SUM + TEXT_NEGATIVE)
     @Test
     void testSumNegative() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -63,15 +66,14 @@ class SimpleCalcIntegerTests {
                         TEXT_NEGATIVE,
                         PLUS.getMathAction(),
                         RESULT.getMathAction(),
-                        VALUE_2,
-                        VALUE_2,
-                        VALUE_2
+                        VALUE_2_25,
+                        VALUE_3_75,
+                        VALUE_6_0
                 )
         );
-        assertNotEquals(NEGATIVE_MESSAGE, VALUE_2, control.sum(VALUE_2, VALUE_2));
+        assertNotEquals(NEGATIVE_MESSAGE, VALUE_2_25, control.sum(VALUE_2_25, VALUE_2_25));
     }
 
-    @DisplayName(TEXT_DIFF + TEXT_POSITIVE)
     @Test
     void testDiffPositive() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -81,15 +83,14 @@ class SimpleCalcIntegerTests {
                         TEXT_POSITIVE,
                         MINUS.getMathAction(),
                         RESULT.getMathAction(),
-                        VALUE_5,
-                        VALUE_3,
-                        VALUE_2
+                        VALUE_3_75,
+                        VALUE_2_25,
+                        VALUE_1_5
                 )
         );
-        assertEquals(POSITIVE_MESSAGE, VALUE_2, control.difference(VALUE_5, VALUE_3));
+        assertEquals(VALUE_1_5, control.difference(VALUE_3_75, VALUE_2_25), VALUE_DELTA);
     }
 
-    @DisplayName(TEXT_DIFF + TEXT_NEGATIVE)
     @Test
     void testDiffNegative() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -99,33 +100,32 @@ class SimpleCalcIntegerTests {
                         TEXT_NEGATIVE,
                         MINUS.getMathAction(),
                         RESULT.getMathAction(),
-                        VALUE_6,
-                        VALUE_5,
-                        VALUE_6
+                        VALUE_6_0,
+                        VALUE_1_5,
+                        VALUE_6_0
                 )
         );
-        assertNotEquals(NEGATIVE_MESSAGE, VALUE_6, control.difference(VALUE_6, VALUE_5));
+        assertNotEquals(NEGATIVE_MESSAGE, VALUE_6_0, control.difference(VALUE_6_0, VALUE_1_5));
     }
 
-    @DisplayName(TEXT_MULT + TEXT_POSITIVE)
     @Test
     void testMultPositive() {
         LOG.info(format(CALLED_METHOD_TEXT,
                 Thread.currentThread().getStackTrace()[1].getMethodName()));
+        double pow = Math.pow(VALUE_6_0, control.sum(VALUE_1_5, VALUE_DELTA));
         LOG.debug(MessageBuilder
                 .getMessage(TEXT_MULT,
                         TEXT_POSITIVE,
                         MULT.getMathAction(),
                         RESULT.getMathAction(),
-                        VALUE_2,
-                        VALUE_3,
-                        VALUE_6
+                        VALUE_6_0,
+                        VALUE_6_0,
+                        pow
                 )
         );
-        assertEquals(POSITIVE_MESSAGE, VALUE_6, control.multiplication(VALUE_2, VALUE_3));
+        assertEquals(pow, control.multiplication(VALUE_6_0, VALUE_6_0), VALUE_DELTA);
     }
 
-    @DisplayName(TEXT_MULT + TEXT_NEGATIVE)
     @Test
     void testMultNegative() {
         LOG.info(format(CALLED_METHOD_TEXT,
@@ -135,48 +135,46 @@ class SimpleCalcIntegerTests {
                         TEXT_NEGATIVE,
                         MULT.getMathAction(),
                         RESULT.getMathAction(),
-                        VALUE_6,
-                        VALUE_3,
-                        VALUE_2
+                        VALUE_6_0,
+                        VALUE_3_75,
+                        VALUE_2_25
                 )
         );
-        assertNotEquals(NEGATIVE_MESSAGE, VALUE_2, control.multiplication(VALUE_6, VALUE_3));
+        assertNotEquals(NEGATIVE_MESSAGE, VALUE_2_25, control.multiplication(VALUE_6_0, VALUE_3_75));
     }
 
-    @DisplayName(TEXT_DIV + TEXT_POSITIVE)
     @Test
     void testDivPositive() {
         LOG.info(format(CALLED_METHOD_TEXT,
                 Thread.currentThread().getStackTrace()[1].getMethodName()));
         LOG.debug(MessageBuilder
                 .getMessage(TEXT_DIV,
-                        TEXT_POSITIVE,
-                        DIV.getMathAction(),
+                        TEXT_NEGATIVE,
+                        MULT.getMathAction(),
                         RESULT.getMathAction(),
-                        VALUE_6,
-                        VALUE_3,
-                        VALUE_2
+                        VALUE_6_0,
+                        VALUE_3_75,
+                        VALUE_2_25
                 )
         );
-        assertEquals(POSITIVE_MESSAGE, VALUE_2, control.division(VALUE_6, VALUE_3));
+        assertEquals(control.sum(VALUE_6_0, VALUE_6_0), control.division(VALUE_6_0, VALUE_DELTA), VALUE_DELTA);
     }
 
-    @DisplayName(TEXT_DIV + TEXT_NEGATIVE)
     @Test
     void testDivNegative() {
         LOG.info(format(CALLED_METHOD_TEXT,
                 Thread.currentThread().getStackTrace()[1].getMethodName()));
         LOG.debug(MessageBuilder
-                .getMessage(TEXT_DIV,
+                .getMessage(TEXT_MULT,
                         TEXT_NEGATIVE,
-                        DIV.getMathAction(),
+                        MULT.getMathAction(),
                         RESULT.getMathAction(),
-                        VALUE_6,
-                        VALUE_2,
-                        VALUE_6
+                        VALUE_6_0,
+                        VALUE_2_25,
+                        VALUE_6_0
                 )
         );
-        assertNotEquals(NEGATIVE_MESSAGE, VALUE_6, control.division(VALUE_6, VALUE_2));
+        assertNotEquals(NEGATIVE_MESSAGE, VALUE_6_0, control.division(VALUE_6_0, VALUE_2_25));
     }
 
 }

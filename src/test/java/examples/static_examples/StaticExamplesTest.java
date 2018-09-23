@@ -7,9 +7,9 @@ import java.util.Date;
 
 import static org.junit.Assert.*;
 
-public class TestStaticExamples {
+public class StaticExamplesTest {
 
-    private static final Logger log = Logger.getLogger(TestStaticExamples.class);
+    private static final Logger log = Logger.getLogger(StaticExamplesTest.class);
     private ExampleClass exampleClass = new ExampleClass();
     private static int time;
 

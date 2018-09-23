@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.*;
 
-public class TestHttpResponse {
+public class TestHttpResponseTest {
 
     private static int response;
 
