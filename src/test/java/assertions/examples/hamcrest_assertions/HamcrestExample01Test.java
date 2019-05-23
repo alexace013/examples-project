@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.core.Every.everyItem;
 
-public class HamcrestExample01 {
+public class HamcrestExample01Test {
 
     @Test
     public void listShouldInitiallyBeEmpty() {

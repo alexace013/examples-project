@@ -7,6 +7,7 @@ import utils.http.HttpUtil;
 import java.io.IOException;
 
 import static org.junit.Assert.*;
+import static java.lang.System.out;
 
 public class TestHttpResponseTest {
 
@@ -20,7 +21,7 @@ public class TestHttpResponseTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(String.format("response %s", response));
+        out.printf("response %s", response);
     }
 
     @Test
@@ -31,7 +32,7 @@ public class TestHttpResponseTest {
         } catch (IOException e) {
 
         }
-        System.out.println(String.format("response %s", response));
+        out.printf("response %s", response);
     }
 
 }
