@@ -253,6 +253,8 @@
                 <configuration>
                     <parallel>classes</parallel>
                     <threadCount>2</threadCount>
+                    <useSystemClassLoader>false</useSystemClassLoader>
+                    <!--<testFailureIgnore>true</testFailureIgnore>-->
                 </configuration>
                 <executions>
                     <execution>
