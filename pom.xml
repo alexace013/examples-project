@@ -253,6 +253,7 @@
                 <configuration>
                     <parallel>classes</parallel>
                     <threadCount>2</threadCount>
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
                 <executions>
                     <execution>
