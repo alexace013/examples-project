@@ -2,6 +2,7 @@ package examples.classes_examples;
 
 import org.apache.log4j.Logger;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -16,6 +17,7 @@ public class ATest {
         a = new C();
     }
 
+    @Ignore
     @Test
     public void test_1() {
         log.info(a.getText());

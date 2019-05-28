@@ -1,5 +1,6 @@
 package examples.parameterized_examples;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -25,6 +26,7 @@ public class ParametersTest {
                 "testValue2"};
     }
 
+    @Ignore
     @Test
     public void valueTest01() {
         String testValue = value;

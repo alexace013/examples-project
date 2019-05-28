@@ -3,6 +3,7 @@ package examples.json_examples.jSonParseExamplesTests;
 import examples.json_examples.jsonParseExamples.UtilJSONParse;
 import org.apache.log4j.Logger;
 import org.junit.FixMethodOrder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
@@ -34,6 +35,7 @@ public class UtilJSONParseTest {
         assertEquals(0, value);
     }
 
+    @Ignore
     @Test
     public void testValue_03() {
         int value;
@@ -47,6 +49,7 @@ public class UtilJSONParseTest {
         assertEquals(0, value);
     }
 
+    @Ignore
     @Test
     public void testValue_04() {
         int value;

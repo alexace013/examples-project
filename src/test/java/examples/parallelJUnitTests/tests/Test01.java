@@ -2,6 +2,7 @@ package examples.parallelJUnitTests.tests;
 
 import examples.parallelJUnitTests.fixture.Fixture;
 import examples.parallelJUnitTests.fixture.Parallelized;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized.Parameters;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
+@Ignore
 @RunWith(Parallelized.class)
 public class Test01 extends Fixture {
 

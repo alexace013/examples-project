@@ -1,5 +1,6 @@
 package examples.enums_examples;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -48,6 +49,7 @@ public class EnumExample2Test {
         printAllValues();
     }
 
+    @Ignore
     @Test
     public void test08() {
         String newValue = "VALUE5";

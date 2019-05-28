@@ -1,6 +1,7 @@
 package examples.static_examples;
 
 import org.apache.log4j.Logger;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Date;
@@ -18,6 +19,7 @@ public class StaticExamplesTest {
         assertEquals(102, ExampleClass.valueAbstract);
     }
 
+    @Ignore
     @Test
     public void test02() {
         exampleClass = new ExampleClass(58);
@@ -31,6 +33,7 @@ public class StaticExamplesTest {
         assertEquals(exampleClass.getValue(), exampleClass.someMethod());
     }
 
+    @Ignore
     @Test
     public void test04() {
         time = getTime();
@@ -46,6 +49,7 @@ public class StaticExamplesTest {
         assertEquals(date, date1.toString());
     }
 
+    @Ignore
     @Test
     public void test05() {
         log.info(String.format("FLOAT value = %s DOUBLE value = %s",

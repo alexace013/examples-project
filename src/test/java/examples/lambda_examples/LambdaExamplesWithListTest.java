@@ -21,7 +21,7 @@ public class LambdaExamplesWithListTest {
     public void positiveLambdaExamplesWithListGetSortingStringListBeforeJava8() {
         LOG.info(String.format("list before sorting: %s", STRING_LIST));
         resultList = getSortingStringListBeforeJava8(STRING_LIST);
-        LOG.info(String.format("list afret soring: %s", resultList));
+        LOG.info(String.format("list after soring: %s", resultList));
         assertEquals(Arrays.asList(EXPECTED_TEXT.split(", ")), resultList);
         String methodName = Thread.currentThread()
                 .getStackTrace()[1]
@@ -34,7 +34,7 @@ public class LambdaExamplesWithListTest {
     public void positiveLambdaExamplesWithListGetSortingStringListAfterJava8() {
         LOG.info(String.format("list before sorting: %s", STRING_LIST));
         resultList = getSortingStringListAfterJava8(STRING_LIST);
-        LOG.info(String.format("list afret soring: %s", resultList));
+        LOG.info(String.format("list after soring: %s", resultList));
         assertEquals(Arrays.asList(EXPECTED_TEXT.split(", ")), resultList);
         String methodName = Thread.currentThread()
                 .getStackTrace()[1]
