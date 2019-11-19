@@ -39,7 +39,7 @@ public class ListExampleTest {
     private static void checkListSize(final List list, final int expectedSize) {
         final int actualSize = list.size();
         Assertions.assertThat(list.size())
-                .as(String.format("actual size = %d is not as expected size = %d", actualSize, expectedSize))
+                .as(String.format("actual list size = %d is not as expected size = %d", actualSize, expectedSize))
                 .isEqualTo(expectedSize);
     }
 

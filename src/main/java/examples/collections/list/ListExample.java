@@ -30,6 +30,7 @@ class ListExample {
     static void clearLists(final List... lists) {
         for (List list : lists) {
             list.clear();
+            log.info(String.format("LIST %s WAS CLEANED.", list.getClass().getSimpleName()));
         }
     }
 }
